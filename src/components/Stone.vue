@@ -1,10 +1,14 @@
 <template>
-  <div class="rounded-lg shadow">
-    <div class="bg-white shadow rounded-lg overflow-hidden">
+  <div
+    class="rounded-lg shadow cursor-pointer"
+    @click="routeToImage(id)"
+  >
+    <div class="bg-white hover:shadow-xl rounded-lg overflow-hidden">
       <img
+        class="w-full"
         :src="imageUrl"
       >
-      <div class="w-full flex px-6 py-4 -mx-1">
+      <!-- <div class="w-full flex px-6 py-4 -mx-1">
         <span
           v-for="tag in tags"
           :key="tag"
@@ -12,7 +16,7 @@
         >
           #{{ tag }}
         </span>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -31,6 +35,16 @@ export default {
     tags: {
       type: Array,
       default: null
+    }
+  },
+  methods: {
+    routeToImage (imageID) {
+      this.$router.push({
+        name: 'view-stone',
+        params: {
+          id: imageID
+        }
+      })
     }
   }
 }

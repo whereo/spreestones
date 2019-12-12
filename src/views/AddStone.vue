@@ -95,8 +95,6 @@ export default {
   },
   data () {
     return {
-      url: 'http://your-post.url',
-      headers: { 'access-token': '<your-token>' },
       imageUrl: false
     }
   },
