@@ -4,11 +4,11 @@
       <img
         :src="imageUrl"
       >
-      <div class="w-full flex px-6 py-4 -mx-2">
+      <div class="w-full flex px-6 py-4 -mx-1">
         <span
           v-for="tag in tags"
           :key="tag"
-          class="rounded-full bg-gray-200 px-3 py-1 mx-1"
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mx-1"
         >
           #{{ tag }}
         </span>

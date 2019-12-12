@@ -50,7 +50,7 @@
               Tags
             </label>
             <input
-              id="inline-full-name"
+              id="tags"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               placeholder="#rounded, #green, #sun"
@@ -67,7 +67,7 @@
               Message for the Creator
             </label>
             <input
-              id="inline-full-name"
+              id="message"
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               placeholder="Thanks for this beautiful art"

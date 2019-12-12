@@ -7,7 +7,9 @@
       <div id="brand">
         <router-link
           class="py-1 px-2 mx-1 font-bold hover:background-teal-300"
-          to="/"
+          :to="{
+            name: 'home'
+          }"
         >
           SpreeStones
         </router-link>
@@ -27,7 +29,9 @@
       >
         <router-link
           class="py-2 px-4 mx-1 uppercase leading-none text-xs font-semibold tracking-wider rounded-full hover:bg-teal-800"
-          to="/new"
+          :to="{
+            name: 'new'
+          }"
         >
           Add Picture
         </router-link>
