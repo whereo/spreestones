@@ -1,34 +1,43 @@
+/* eslint-disable vue/attribute-hyphenation */
 <template>
   <div class="home">
-    <div class="container max-w-2xl mx-auto py-8">
-      <masonry
-        :cols="{default: 3, 768: 2}"
-        :gutter="{default: '1rem', 700: '0.5rem'}"
+    <div class="w-full mx-auto py-8 px-8">
+      <Waterfall
+        resizeable="true"
       >
-        <div
+        <WaterfallItem
           v-for="stone in stones"
           :key="stone.id"
-          class="min-w-1/2 md:min-w-0 mb-2 md:mb-4"
+          :width="250"
+          class="p-2"
         >
-          <Stone
+          <StoneCard
             :id="stone.id"
             :image-url="stone.imageUrl"
             :tags="stone.tags"
           />
-        </div>
-      </masonry>
+        </WaterfallItem>
+      </Waterfall>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import Stone from '@/components/Stone'
+import { Waterfall, WaterfallItem } from 'vue2-waterfall'
+import StoneCard from '@/components/StoneCard'
 
 export default {
   name: 'Home',
   components: {
-    Stone
+    StoneCard,
+    Waterfall,
+    WaterfallItem
+  },
+  data () {
+    return {
+
+    }
   },
   computed: {
     ...mapState(['stones'])

@@ -1,44 +1,53 @@
 <template>
-  <div class="container max-w-2xl mx-auto py-8">
-    <div class="bg-white rounded-lg overflow-hidden">
-      <img
-        class="w-full"
-        :src="stone.imageUrl"
-      >
-      <div class="w-full flex px-6 py-4 -mx-1">
-        <Tag
-          v-for="tag in stone.tags"
-          :key="tag"
-          :name="tag"
-        />
-      </div>
+  <div
+    :key="stone.id"
+    class="container mx-auto py-8 flex"
+  >
+    <div class="flex-1 pr-12">
+      <StoneWithDetails :stone="stone" />
+    </div>
+    <div class="flex-1 flex-shrink">
+      <h1 class="py-6 text-2xl text-center font-semibold tracking-tight text-teal-900">
+        Similar stones
+      </h1>
+      <Grid />
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Tag from '@/components/Tag'
+import StoneWithDetails from '@/components/StoneWithDetails'
+import Grid from '@/components/Grid'
 
 export default {
   name: 'ViewStone',
   components: {
-    Tag
+    StoneWithDetails,
+    Grid
   },
   data () {
     return {
-      stone: {}
+      stone: false
     }
   },
   computed: {
     ...mapGetters(['getStoneById'])
   },
+  watch: {
+    '$route.params.id': function (id) {
+      this.getStone(id)
+    }
+  },
   created () {
-    this.stone = this.getStoneById(Number(this.$route.params.id))
+    if (this.$route.params.id) {
+      this.getStone(Number(this.$route.params.id))
+    }
+  },
+  methods: {
+    getStone (id) {
+      this.stone = this.getStoneById(id)
+    }
   }
 }
 </script>
-
-<style>
-
-</style>

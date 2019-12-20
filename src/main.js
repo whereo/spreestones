@@ -8,6 +8,7 @@ import '@/css/main.css'
 
 // Masonry
 import VueMasonry from 'vue-masonry-css'
+
 Vue.use(VueMasonry)
 
 Vue.config.productionTip = false

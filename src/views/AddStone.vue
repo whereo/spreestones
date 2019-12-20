@@ -1,7 +1,7 @@
 <template>
   <div class="container max-w-2xl mx-auto py-8">
     <div class="bg-white shadow rounded-lg">
-      <h1 class="px-6 pt-6 text-2xl font-bold tracking-tight text-teal-900">
+      <h1 class="px-6 pt-6 text-2xl font-semibold tracking-tight text-teal-900">
         Add a new stone
       </h1>
       <p class="px-6 py-4 pb-4 text-gray-700 text-sm leading-snug">
